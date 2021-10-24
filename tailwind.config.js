@@ -1,3 +1,5 @@
+const plugin = require("tailwindcss/plugin");
+
 module.exports = {
   mode: "jit",
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
@@ -27,5 +29,14 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      const utilities = {
+        ".bg-hero": {
+          "background-image": "url(/hero.png)",
+        },
+      };
+      addUtilities(utilities);
+    }),
+  ],
 };

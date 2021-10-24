@@ -10,7 +10,7 @@ const Button = ({ className, children, variant }) => {
 
   return (
     <a
-      className={`py-2 px-10 font-semibold text-lg rounded-full $inline-block ${pickVariants}${addClassName}`}>
+      className={`py-2 px-10 font-semibold text-lg rounded-full $inline-block${addClassName} ${pickVariants}`}>
       {children}
     </a>
   );
